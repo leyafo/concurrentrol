@@ -6,11 +6,14 @@ Limit the maximum number of goroutines running at the same time.
 
 The simplest code.
 ```go
+import "github.com/leyafo/concurrentrol"
+func foo(){
 	var count int32
-	Run(10, 100, func(i int) error { //Running 100 tasks and concurrent task is 10.
+	concurrentrol.Run(10, 100, func(i int) error { //Running 100 tasks and concurrent task is 10.
 		atomic.AddInt32(&count, int32(i))
 		return nil
 	})
+}
 ```
 
 ## License
