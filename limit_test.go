@@ -51,7 +51,7 @@ func TestExactTaskError(t *testing.T) {
 		return nil
 	})
 	if err != nil {
-		t.Logf(err.Error())
+		t.Logf("task number is: %d", err.(*customError).taskNumber)
 	} else {
 		t.Error("Test failed!")
 	}
